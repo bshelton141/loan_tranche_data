@@ -1,4 +1,6 @@
 library(data.table)
+
+#create the months for the fake data
 month_labels <- data.frame(a = (c("2015-08",
                                   "2015-09",
                                   "2015-10",
@@ -15,6 +17,8 @@ month_labels <- data.frame(a = (c("2015-08",
 
 set.seed(12345)
 
+
+#create the fake data
 t1 <- function(x) {
   lt1 <- data.frame(loan_month = sort(rep(month_labels$a, length(month_labels$a))),
                     loan_amount = sort(rep(c((sample(c(160000:2600000), 1, FALSE) + 
